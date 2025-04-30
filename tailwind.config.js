@@ -2,10 +2,13 @@
 module.exports = {
   content: [
     "./index.html",       // Menambahkan path ke file HTML utama
-    "./js/**/*.{js}",     // Menambahkan path untuk semua file JS di dalam folder js
+    "./js/script.js",     // Menambahkan path untuk semua file JS di dalam folder js
   ],
   theme: {
-    extend: {},
+    extend: {fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
