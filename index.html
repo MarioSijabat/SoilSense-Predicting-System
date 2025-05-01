@@ -6,6 +6,7 @@
   <title>SoilSense</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="dist/styles.css" rel="stylesheet">
 </head>
 <body class="bg-[url('/assets/images/background.png')] bg-cover bg-top mx-[135px]"></body>
@@ -66,10 +67,52 @@
     </div>
   </section>
   
+  <section id="visualized" class="relative py-20 flex items-center justify-center px-4">
+    <div class="bg-white/5 backdrop-blur-sm p-10 rounded-[25px] border border-white/50 shadow-lg w-full max-w-6xl text-white text-center">
+      
+      <h2 class="text-2xl font-bold text-center mb-3"><strong>Lorem ipsum dolor sit amet, consectetur</strong></h2>
+      <p class="text-sm font-normal text-center mb-6 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur
+      </p>
+      
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 sm:gap-x-8" aria-label="Equation with variables and operators">
+        
+        <!-- Left Group -->
+        <div class="flex flex-col gap-3 min-w-[140px]" aria-label="Left side variables">
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Temparature</button>
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Moisture</button>
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Potassium</button>
+        </div>
+  
+        <!-- Operator -->
+        <div class="text-3xl font-bold text-white mx-2" aria-hidden="true">+</div>
+  
+        <!-- Middle Group -->
+        <div class="flex flex-col gap-3 min-w-[140px]" aria-label="Middle variables">
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Humidity</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Nitrogen</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Phosphorous</button>
+        </div>
+  
+        <!-- Operator -->
+        <div class="text-3xl font-bold text-white mx-2" aria-hidden="true">=</div>
+  
+        <!-- Right Group -->
+        <div class="grid grid-cols-2 gap-x-5 gap-y-3 min-w-[250px] sm:grid-cols-2" aria-label="Right side variables">
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Soil Type</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Croil Type</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Fertilizer</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Fertility Index</button>
+        </div>
 
-  <section id="visualized" class="relative h-screen">
-
+        <p class="text-sm font-normal mt-6 select-none text-white" aria-label="Footer note">
+          *Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit.
+        </p>
+      </div>
+    </div>
   </section>
+  
+  
   <section id="data" class="relative h-screen">
 
   </section>
