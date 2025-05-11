@@ -1,15 +1,9 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template
 import pandas as pd
 import joblib
 import os
-from flask_cors import CORS  # Import CORS
 
-# Inisialisasi Flask
-app = Flask(__name__, static_folder='static', template_folder='templates')
-
-
-# Menambahkan CORS setelah mendefinisikan app
-CORS(app)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # Load model dan scaler
 try:
@@ -23,7 +17,11 @@ except Exception as e:
 # Route untuk halaman utama
 @app.route('/')
 def index():
-    return send_from_directory(app.template_folder, 'input_data.html')
+     return render_template('index.html')
+
+@app.route('/input')
+def input_data():
+    return render_template('input_data.html')
 
 # Route prediksi
 @app.route('/predict', methods=["POST"])
@@ -48,4 +46,4 @@ def predict():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True)
