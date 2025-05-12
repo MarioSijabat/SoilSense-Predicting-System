@@ -17,152 +17,170 @@
       <div class="text-center text-white p-8">
         <h1 id="typingText1" class="text-5xl font-extrabold mb-4 "></h1>
         <h1 id="typingText2" class="text-5xl font-extrabold mb-4"></h1>
-        <h1 id="typingText3" class="text-5xl font-extrabold mb-4"></h1>
-        <p class="mb-6 text-lg">"Harness Soil Data. Grow Smarter."</p>
+        <p class="mb-6 text-lg">Get Accurate Predictions and Make Smarter Agricultural Decisions</p>
         <a href="{{ url_for('input_data') }}" class="bg-green-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-green-600 transition-all">Start</a>
       </div>
     </div>
   </section>
 
   <section id="intro" class="relative h-screen">
-    <div class="flex justify-between items-center h-full px-8 gap-8">
+    <div class="items-center h-full mt-20">
+      <div class="flex justify-between items-start h-full px-8 gap-20">
       
-      <!-- Left Side -->
-      <div class="w-1/3 flex justify-end items-center">
-        <div class="bg-white/5 backdrop-blur-sm p-8 rounded-[25px] border border-white/50 shadow-lg max-w-md">
-          <h3 class="text-xl text-white font-semibold mb-2">Model’s Accuracy</h3>
-  
-          <!-- Circular Progress Bar (Canvas) -->
-          <div class="relative inline-block mb-4">
-            <canvas id="progressBar" width="200" height="10"></canvas>
+        <!-- Left Side -->
+        <div class="w-1/3 flex justify-end items-center">
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-[25px] border border-white/50 shadow-lg max-w-md">
+            <h3 class="text-3xl text-white font-bold text-center">Model’s Accuracy</h3>
+    
+            <div class="text-6xl text-white my-6 mx-24 font-extrabold text-center">87%</div>
+            <!-- Circular Progress Bar (Canvas)
+            <div class="flex justify-center items-center width-[200px] h-[200px]">
+              <canvas id="progressBar" width="200" height="200"></canvas>
+            </div>
+            -->
+    
+            <div class="text-xl text-white bg-green-900 mb-2 mx-24 border-2 font-semibold text-center rounded-[25px]">Very Good</div>
+            <p class="text-md text-center text-gray-200">The high accuracy of our trained model confirms the reliability of this prediction.</p>
           </div>
-          <div class="text-4xl text-white font-extrabold mb-2">86%</div>
-          <p class="text-lg text-gray-200">Very Good</p>
+        </div>
+    
+        <!-- Right Side -->
+        <div class="w-2/3 flex justify-start items-center">
+          <div class="bg-white/5 backdrop-blur-sm p-6 rounded-[25px] border border-white/50 shadow-lg">
+            <h3 class="text-3xl text-white font-bold text-center mb-8">How We Predict the Best Crops for Your Land</h3>
+            <div class="flex justify-center items-center mb-8">
+              <div class="w-1/2 flex items-center">
+                <img src="{{ url_for('static', filename='assets/icons/graph_model.png') }}" alt="Leaf" class="w-16 h-16 mr-4">
+                <div>
+                  <p class="text-xl text-white font-semibold">23k+ Datasets</p>
+                  <p class="text-md text-gray-200">"Trained with a reliable dataset for accurate predictions."</p>
+                </div>
+              </div>
+              <div class="w-1/2 flex items-center">
+                <img src="{{ url_for('static', filename='assets/icons/pie_data.png') }}" alt="Leaf" class="w-16 h-16 mr-4">
+                <div>
+                  <p class="text-xl text-white font-semibold">Trained Model</p>
+                  <p class="text-md text-gray-200">"Trained with Decision Tree and Linear Regression to predict the best crops."</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-md text-gray-200">By understanding the data and the model behind the prediction, you can trust the insights and make better decisions for your crops.</p>
+          </div>
         </div>
       </div>
   
-      <!-- Right Side -->
-      <div class="w-2/3 flex justify-start items-center">
-        <div class="bg-white/5 backdrop-blur-sm p-8 rounded-[25px] border border-white/50 shadow-lg">
-          <h3 class="text-2xl text-white font-semibold mb-4">Understand Your Soil, Grow the Right Crops</h3>
-          <div class="flex justify-center items-center mb-4">
-            <div class="w-1/2 flex items-center">
-              <img src= "{{ url_for('static', filename='assets/icons/graph_model.png') }}" alt="Leaf" class="w-16 h-16 mr-4">
-              <div>
-                <p class="text-xl text-white font-semibold">33k+ Soil Samples Analyzed</p>
-              </div>
-            </div>
-            <div class="w-1/2 flex items-center">
-              <img src="{{ url_for('static', filename='assets/icons/pie_data.png') }}" alt="Leaf" class="w-16 h-16 mr-4">
-              <div>
-                <p class="text-xl text-white font-semibold">Insights based on temperature, humidity, rainfall, nitrogen, potassium, phosphorous and pH levels</p>
-              </div>
-            </div>
-          </div>
-          <p class="text-lg text-gray-200"> SoilSense empowers farmers with data-driven decisions by analyzing environmental and nutrient conditions to recommend the most suitable crops for your land.</p>
-        </div>
-      </div>
     </div>
   </section>
   
-<section id="visualized" class="relative py-20 flex items-center justify-center px-4">
-  <div class="bg-white/5 backdrop-blur-sm p-10 rounded-[25px] border border-white/50 shadow-lg w-full max-w-6xl text-white text-center">
-    
-    <h2 class="text-2xl font-bold text-center mb-3">
-      <strong>How Soil Parameters Influence Crop Prediction</strong>
-    </h2>
-    <p class="text-sm font-normal text-center mb-6 leading-relaxed">
-      Our model analyzes a combination of environmental conditions and soil nutrients to determine the most suitable crops and fertility potential for your land.
-    </p>
-    
-    <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 sm:gap-x-8" aria-label="Equation with variables and operators">
+  <section id="visualized" class="relative py-20 flex items-center justify-center px-4">
+    <div class="bg-white/5 backdrop-blur-sm p-10 rounded-[25px] border border-white/50 shadow-lg w-full max-w-6xl text-white text-center">
       
-      <!-- Left Group -->
-      <div class="flex flex-col gap-3 min-w-[140px]" aria-label="Left side variables">
-        <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Temperature</button>
-        <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Rainfall</button>
-        <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Potassium</button>
-        <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">pH</button>
-      </div>
-
-      <!-- Operator -->
-      <div class="text-3xl font-bold text-white mx-2" aria-hidden="true">+</div>
-
-      <!-- Middle Group -->
-      <div class="flex flex-col gap-3 min-w-[140px]" aria-label="Middle variables">
-        <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Humidity</button>
-        <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Nitrogen</button>
-        <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Phosphorous</button>
-      </div>
-
-      <!-- Operator -->
-      <div class="text-3xl font-bold text-white mx-2" aria-hidden="true">=</div>
-
-      <!-- Right Group -->
-      <div class="grid grid-cols-2 gap-x-5 gap-y-3 min-w-[250px] sm:grid-cols-2" aria-label="Right side variables">
-        <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Predicted Crop</button>
-        <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Fertility Index</button>
-      </div>
-
-      <p class="text-sm font-normal mt-6 select-none text-white" aria-label="Footer note">
-        *These predictions are based on scientific models trained with thousands of real soil data points.
+      <h2 class="text-2xl font-bold text-center mb-3">
+        Key Factors Influencing Crop Choices
+      </h2>
+      <p class="text-sm font-normal text-center mb-6 leading-relaxed">
+        By combining soil conditions, weather patterns, and nutrient levels, we predict the optimal crops for your land
       </p>
+      
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 sm:gap-x-8" aria-label="Equation with variables and operators">
+        
+        <!-- Left Group -->
+        <div class="flex flex-col gap-3 min-w-[140px]" aria-label="Left side variables">
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Temperature</button>
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Rainfall</button>
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Potassium</button>
+          <button class="bg-white/60 border-white rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">pH</button>
+        </div>
+
+        <!-- Operator -->
+        <div class="text-3xl font-bold text-white mx-2" aria-hidden="true">+</div>
+
+        <!-- Middle Group -->
+        <div class="flex flex-col gap-3 min-w-[140px]" aria-label="Middle variables">
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Humidity</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Nitrogen</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Phosphorous</button>
+        </div>
+
+        <!-- Operator -->
+        <div class="text-3xl font-bold text-white mx-2" aria-hidden="true">=</div>
+
+        <!-- Right Group -->
+        <div class="grid grid-cols-2 gap-x-5 gap-y-3 min-w-[250px] sm:grid-cols-2" aria-label="Right side variables">
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Predicted Crop</button>
+          <button class="bg-white/60 rounded-xl px-5 py-2 font-bold text-base text-green-900 min-w-[110px]" type="button">Fertility Index</button>
+        </div>
+
+        <p class="text-sm font-normal mt-6 select-none text-white" aria-label="Footer note">
+          *These predictions are based on scientific models trained with thousands of real soil data points.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="data" class="relative mt-20 h-screen flex flex-wrap justify-between bg-cover bg-center text-white px-6 py-12">
   <!-- Left Section -->
-  <div class="flex flex-col max-w-xl flex-1 mb-10">
-    <h3 class="font-bold text-xl mb-10 max-w-xl">
-      Key Agricultural Data to Support Your Decisions
-    </h3>
-
-    <div class="flex flex-wrap gap-6 mb-8">
-      <!-- Stat Box Start -->
-      <div class="bg-white/10 border border-white/30 rounded-xl p-5 w-64 flex gap-4 items-center backdrop-blur">
-        <div class="relative w-20 h-20 shrink-0">
-          <svg class="rotate-[-90deg] w-full h-full" viewBox="0 0 60 60">
-            <circle cx="30" cy="30" r="26" stroke="#fff" stroke-opacity="0.15" stroke-width="8" fill="none" />
-            <circle cx="30" cy="30" r="26" stroke="#1f4d1f" stroke-width="8" stroke-linecap="round" fill="none"
-              stroke-dasharray="164" stroke-dashoffset="44" />
-          </svg>
-          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <img src="{{ url_for('static', filename='assets/icons/pupuk.png') }}" alt="Fertilizer Icon" class="w-10 h-10" />
+    <div class="flex flex-col max-w-xl flex-1 mb-10">
+      <h3 class="font-bold text-3xl mb-10 max-w-xl">Improving Agricultural Efficiency</h3>
+      <div class="flex flex-wrap gap-6 mb-8">
+        <!-- Stat Box Start -->
+        <div class="bg-white/10 border border-white/30 rounded-xl p-5 w-64 flex-col gap-4 items-center backdrop-blur">
+          <div class="flex gap-4 items-center">
+            <div class="relative w-20 h-20 shrink-0">
+              <svg class="rotate-[-90deg] w-full h-full" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="26" stroke="#fff" stroke-opacity="0.15" stroke-width="8" fill="none" />
+                <circle cx="30" cy="30" r="26" stroke="#1f4d1f" stroke-width="8" stroke-linecap="round" fill="none"
+                  stroke-dasharray="164" stroke-dashoffset="44" />
+              </svg>
+            
+              <!-- Ubah ukuran gambar jadi lebih besar -->
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <img src="{{ url_for('static', filename='assets/icons/pupuk.png') }}" alt="Fertilizer Icon" class="w-10 h-10" />
+              </div>
+            </div>          
+        
+            <!-- Text Content -->
+            <div>
+              <strong class="block text-xl font-bold text-white mb-1">10.000+</strong>
+              <p class="text-sm text-white-200">Acres of Land</p>
+            </div>
+          </div>
+          <div> 
+            <p class="text-xs text-white-300 mt-2 leading-snug">Optimized for Sustainable Agriculture</p>
           </div>
         </div>
-        <div>
-          <strong class="block text-xl font-bold text-white mb-1">200+</strong>
-          <p class="text-sm text-white-200">Fertilizer Types</p>
-          <p class="text-xs text-white-300 mt-2 leading-snug">Analyzed for effectiveness across soil conditions</p>
-        </div>
-      </div>
-      <!-- Stat Box End -->
-
-      <!-- Duplicate Box -->
-      <div class="bg-white/10 border border-white/30 rounded-xl p-5 w-64 flex gap-4 items-center backdrop-blur">
-        <div class="relative w-20 h-20 shrink-0">
-          <svg class="rotate-[-90deg] w-full h-full" viewBox="0 0 60 60">
-            <circle cx="30" cy="30" r="26" stroke="#fff" stroke-opacity="0.15" stroke-width="8" fill="none" />
-            <circle cx="30" cy="30" r="26" stroke="#1f4d1f" stroke-width="8" stroke-linecap="round" fill="none"
-              stroke-dasharray="164" stroke-dashoffset="44" />
-          </svg>
-          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <img src="{{ url_for('static', filename='assets/icons/pupuk.png') }}" alt="Fertilizer Icon" class="w-10 h-10" />
+        <!-- Stat Box End -->
+      
+        <!-- Duplicate Box (you can loop this with data if needed) -->
+        <div class="bg-white/10 border border-white/30 rounded-xl p-5 w-64 flex-col gap-4 items-center backdrop-blur">
+          <div class="flex gap-4 items-center">
+            <div class="relative w-20 h-20 shrink-0">
+              <svg class="rotate-[-90deg] w-full h-full" viewBox="0 0 60 60">
+                <circle cx="30" cy="30" r="26" stroke="#fff" stroke-opacity="0.15" stroke-width="8" fill="none" />
+                <circle cx="30" cy="30" r="26" stroke="#1f4d1f" stroke-width="8" stroke-linecap="round" fill="none"
+                  stroke-dasharray="164" stroke-dashoffset="44" />
+              </svg>
+            
+              <!-- Ubah ukuran gambar jadi lebih besar -->
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <img src="{{ url_for('static', filename='assets/icons/pupuk.png') }}" alt="Fertilizer Icon" class="w-10 h-10" />
+              </div>
+            </div>          
+        
+            <!-- Text Content -->
+            <div>
+              <strong class="block text-xl font-bold text-white mb-1">500+</strong>
+              <p class="text-sm text-white-200">Farmers</p>
+            </div>
+          </div>
+          <div> 
+            <p class="text-xs text-white-300 mt-2 leading-snug">Benefiting from Smart Crop Predictions</p>
           </div>
         </div>
-        <div>
-          <strong class="block text-xl font-bold text-white mb-1">300+</strong>
-          <p class="text-sm text-white-200">Soil Patterns</p>
-          <p class="text-xs text-white-300 mt-2 leading-snug">Classified from regions across the country</p>
-        </div>
       </div>
+        
+      <p class="mb-6 text-lg">By leveraging smart technologies, farmers can now optimize water usage, boost soil fertility, and achieve higher crop yields.</p>
     </div>
-
-    <p class="mb-6 text-lg">
-      We gather and process extensive soil data to help farmers and agronomists make informed decisions, improve crop productivity, and reduce risks.
-    </p>
-  </div>
 
   <!-- Right Section -->
   <div class="flex flex-col gap-5 max-w-xl flex-1">
@@ -213,9 +231,8 @@
   <script>
     let currentTextIndex = 0;
     const texts = [
-      "Crop Recommendation System",
-      "Based on Soil Data, ",
-      "with Linear Regression and Decision Tree"
+      "Grow Smarter:",
+      "Predict the Best Crops & Soil Fertility",
     ];
 
     function typeText() {
